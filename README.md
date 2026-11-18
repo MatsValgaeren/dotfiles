@@ -8,7 +8,11 @@ This is my personal config for nvim.
 - knap: writing LaTeX
 - toggleterm: easier switching between terminal
 - claude-code integration
-
+- LaziGit, requires LazyGit to already be installed (https://docs.rockylinux.org/10/books/nvchad/additional_software/)
+  ```
+  sudo dnf copr enable atim/lazygit -y
+  sudo dnf install lazygit
+  ```
 ## Configured Hotkeys:
 
 Open Claude: CTRL + ,  
