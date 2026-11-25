@@ -1,0 +1,76 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 34,
+  "spacing": 8,
+
+  "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "group/hardware"
+  ],
+
+  "group/hardware": {
+    "orientation": "horizontal",
+    "modules": ["cpu", "memory", "custom/gpu", "temperature"]
+  },
+
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{name}",
+    "persistent-workspaces": { "*": [1, 2, 3, 4, 5] }
+  },
+  "sway/mode": { "format": "{}" },
+  "sway/window": { "max-length": 45, "tooltip": false },
+
+  "clock": {
+    "format": "\uf017 {:%H:%M  ·  %a %d %b}",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "month",
+      "weeks-pos": "right",
+      "first-day-of-week": 1,
+      "on-scroll": 1,
+      "format": {
+        "months":   "<span color='#f9e2af'><b>{}</b></span>",
+        "weeks":    "<span color='#89b4fa'>{}</span>",
+        "weekdays": "<span color='#a6e3a1'>{}</span>",
+        "today":    "<span color='#f38ba8'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+
+  "cpu": {
+    "interval": 2,
+    "format": "\uf2db {usage}%",
+    "tooltip-format": "Load: {load}\nAvg freq: {avg_frequency} GHz",
+    "states": { "warning": 70, "critical": 90 }
+  },
+
+  "memory": {
+    "format": " {percentage}%",
+    "interval": 5,
+    "tooltip-format": "RAM: {used:0.1f} / {total:0.1f} GiB\nSwap: {swapUsed:0.1f} / {swapTotal:0.1f} GiB",
+    "states": { "warning": 75, "critical": 90 }
+  },
+
+  "custom/gpu": {
+    "exec": "~/.config/waybar/scripts/gpu.sh",
+    "return-type": "json",
+    "interval": 3,
+    "format": "\uf108 {}"
+  },
+
+  "temperature": {
+    "interval": 3,
+    "thermal-zone": 0,
+    "critical-threshold": 85,
+    "format": "\uf2c9 {temperatureC}°C"
+  },
+
+}
