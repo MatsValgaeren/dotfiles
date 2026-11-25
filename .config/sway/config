@@ -16,7 +16,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term foot
+set $term flatpak run org.wezfurlong.wezterm
 # Your preferred application launcher
 # set $menu wmenu-run
 set $menu fuzzel
@@ -76,6 +76,7 @@ client.urgent            #f38ba8  #1e1e2e    #cdd6f4  #f38ba8   #f38ba8
 
 ### Key bindings
 set $mod4 Mod1
+
 # Lock screen
 bindsym $mod4+l exec swaylock
 
