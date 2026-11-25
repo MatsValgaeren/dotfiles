@@ -1,3 +1,12 @@
+# General
+
+Dependencies: git, stow
+
+1. Clone this repo
+2. `stow -v -t ~ .`
+
+## Nvim
+
 This is my personal config for nvim.
 
 1. Install nvim Pre-built archive from https://neovim.io/doc/install/
