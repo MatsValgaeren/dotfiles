@@ -28,6 +28,15 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
 output * scale 1.5
 
+# Border focus color
+default_border pixel 3
+default_floating_border pixel 3
+# class                  border   background text     indicator child_border
+client.focused           #89b4fa  #1e1e2e    #cdd6f4  #f38ba8   #89b4fa
+client.focused_inactive  #313244  #1e1e2e    #cdd6f4  #313244   #313244
+client.unfocused         #313244  #1e1e2e    #6c7086  #313244   #313244
+client.urgent            #f38ba8  #1e1e2e    #cdd6f4  #f38ba8   #f38ba8
+
 #
 # Example configuration:
 #
